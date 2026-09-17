@@ -143,10 +143,11 @@ summary:focus-visible {
 
 .hero__photo {
   z-index: -3;
-  object-fit: cover;
-  object-position: 50% 50%;
+  object-fit: contain;
+  object-position: center top;
+  background-color: #8A6515;
   filter: saturate(0.78) contrast(1.06) brightness(0.84);
-  transform: scale(1.015);
+  transform: none;
 }
 
 .hero__veil {
