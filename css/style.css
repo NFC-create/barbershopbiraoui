@@ -526,6 +526,54 @@ summary:focus-visible {
   color: #fff4ce;
 }
 
+.storefronts {
+  padding-top: 4.8rem;
+  padding-bottom: 4.4rem;
+}
+
+.storefront-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.72rem;
+}
+
+.storefront-gallery figure {
+  position: relative;
+  min-width: 0;
+  aspect-ratio: 4 / 5;
+  margin: 0;
+  overflow: hidden;
+  background: #2a241a;
+  border: 1px solid rgba(138, 101, 21, 0.24);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 34px rgba(78, 54, 10, 0.18);
+}
+
+.storefront-gallery__wide {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 10 !important;
+}
+
+.storefront-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 420ms ease;
+}
+
+.storefront-gallery figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 2.3rem 0.8rem 0.72rem;
+  color: #fffdf7;
+  background: linear-gradient(transparent, rgba(15, 12, 7, 0.86));
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
 .intro {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -700,6 +748,45 @@ summary:focus-visible {
   font-size: clamp(1.45rem, 6.4vw, 2rem);
   font-weight: 500;
   line-height: 1.18;
+}
+
+.prestige-gallery {
+  position: relative;
+  display: grid;
+  grid-auto-columns: 44%;
+  grid-auto-flow: column;
+  gap: 0.65rem;
+  margin: 0 -0.2rem 1.15rem;
+  padding: 0.2rem 0.2rem 0.7rem;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-color: var(--gold) rgba(255, 255, 255, 0.1);
+  scrollbar-width: thin;
+  scroll-snap-type: inline mandatory;
+}
+
+.prestige-gallery img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border: 1px solid rgba(243, 218, 120, 0.54);
+  border-radius: 1rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
+  scroll-snap-align: start;
+}
+
+.prestige-gallery::-webkit-scrollbar {
+  height: 0.32rem;
+}
+
+.prestige-gallery::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+}
+
+.prestige-gallery::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 999px;
 }
 
 .prestige-card__bottom {
@@ -1171,6 +1258,10 @@ summary:focus-visible {
 
   .product-card:hover {
     box-shadow: 0 17px 34px rgba(79, 56, 9, 0.2);
+  }
+
+  .storefront-gallery figure:hover img {
+    transform: scale(1.035);
   }
 
   .footer__links a:hover,
